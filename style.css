@@ -1,3 +1,104 @@
+body {
+  background: linear-gradient(
+    260deg,
+    rgb(74, 234, 220) 0%,
+    rgb(151, 120, 209) 20%,
+    rgb(255, 161, 242) 40%,
+    rgb(250, 134, 186) 60%,
+    rgb(251, 105, 98) 80%,
+    rgb(254, 248, 76) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.flyinTxtCont {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-content: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.flyIn {
+  color: #fff;
+  font-family: "Raleway";
+  text-transform: uppercase;
+  line-height: 1.2em;
+  position: relative;
+  text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.7);
+}
+.lineOne {
+  transition-delay: 0.2s;
+  transition: 0.4s ease in;
+  animation: txtFlyIn 0.3s linear;
+}
+.lineTwo {
+  transition-delay: 0.4s;
+  transition: 0.6s ease in;
+  animation: txtFlyIn 0.6s linear;
+}
+.lineThree {
+  transition-delay: 0.6s;
+  transition: 0.8s ease in;
+  animation: txtFlyIm 0.9s linear;
+}
+.lineOne,
+.lineTwo,
+.lineThree {
+  font-size: 110px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.lineFour {
+  transition-delay: 2s;
+  transition: 2s ease in;
+  animation: fadeIn 2s linear;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: #000;
+  display: inline-block;
+  color: #000;
+  font-size: 32px;
+  padding: 0.2em 0.5em;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes txtFlyIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 .nav {
   background-color: transparent;
   --bs-nav-link-font-weight: bold;
@@ -83,6 +184,7 @@
 .social-icons {
   display: flex;
   list-style: none;
+  text-shadow: #000;
 }
 
 .social-icons li a {
@@ -90,7 +192,7 @@
   color: #fff;
   font-size: 30px;
   cursor: pointer;
-
+  text-shadow: #000;
   color: #b3fa01;
   position: relative;
   text-align: center;
@@ -101,30 +203,50 @@
 
 .social-icons li a::before,
 .social-icons li a::after {
-  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   left: 0;
   top: 0;
+  bottom: 0;
   transition: 0.5s linear;
+  text-shadow: #000;
 }
 
 .social-icons li a:hover i {
-  transform: scale(1.1);
+  transform: scale(1.5);
+  text-shadow: #000;
 }
 
 .social-icons li a:hover::before {
   transform: skewX(20deg);
   border-left: 3px solid;
   border-right: 3px solid;
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  text-shadow: #000;
+  background: linear-gradient(
+    111.3deg,
+    rgb(74, 234, 220) 0%,
+    rgb(151, 120, 209) 20%,
+    rgb(207, 42, 186) 40%,
+    rgb(238, 44, 130) 60%,
+    rgb(251, 105, 98) 80%,
+    rgb(254, 248, 76) 100%
+  );
 }
 
 .social-icons li a:hover::after {
   transform: skewY(-25deg);
   border-top: 3px solid;
   border-bottom: 3px solid;
+  text-shadow: #000;
 }
 
 @media (max-width: 576px) {
@@ -141,15 +263,6 @@
   text-decoration-color: white;
   text-decoration-line: none;
   text-decoration-thickness: 0;
-}
-
-body {
-  position: relative;
-  background-color: #ffa8a8;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23f78d8d' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23eb7676' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23db6363' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23c65555' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23AA4E4E' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2560' height='1440' preserveAspectRatio='none' viewBox='0 0 2560 1440'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1678%26quot%3b)' fill='none'%3e%3crect width='2560' height='1440' x='0' y='0' fill='url(%23SvgjsLinearGradient1679)'%3e%3c/rect%3e%3cpath d='M0 0L23.12 0L0 343.36z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M0 343.36L23.12 0L478.89 0L0 644.83z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M0 644.83L478.89 0L1174.8600000000001 0L0 712.13z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M0 712.13L1174.8600000000001 0L1330.8000000000002 0L0 998.0899999999999z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M2560 1440L1787.6399999999999 1440L2560 1405.58z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M2560 1405.58L1787.6399999999999 1440L1710.8 1440L2560 1231.37z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M2560 1231.37L1710.8 1440L1192.54 1440L2560 854.03z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M2560 854.03L1192.54 1440L797 1440L2560 327.19999999999993z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1678'%3e%3crect width='2560' height='1440' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='119.44%25' x2='89.06%25' y2='-19.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1679'%3e%3cstop stop-color='rgba(226%2c 255%2c 205%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 143%2c 143%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"); */
 }
 
 /* #thead {
@@ -328,5 +441,38 @@ body {
 }
 
 .scus {
-  box-shadow: 0px 0px 91px 50px rgba(255, 251, 196, 0.75);
+  box-shadow: 0px 0px 91px 50px rgba(255, 250, 187, 0.75);
+}
+
+/*Title*/
+#background {
+  position: absolute;
+  font-family: "Helvetica";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: -webkit-linear-gradient(
+    rgb(255, 5, 5) 45%,
+    rgb(182, 143, 255) 20%,
+    rgb(113, 113, 255) 40%,
+    rgb(255, 177, 94) 60%,
+    rgb(172, 255, 113) 80%,
+    rgb(255, 251, 123) 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  text-align: center;
+  animation: sTransition 10s linear infinite;
+  padding-top: 100px;
+}
+
+@keyframes sTransition {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
 }
