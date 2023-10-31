@@ -316,7 +316,7 @@ body {
 
 .solution_cards_box .solution_card:hover .solu_title h3,
 .solution_cards_box .solution_card:hover .solu_description h5 {
-  color: #fff;
+  color: #ffd000;
 }
 
 .solution_cards_box .solution_card:before {
@@ -338,7 +338,7 @@ body {
 }
 
 .solution_card .solu_title h3 {
-  color: #82c222;
+  color: #ff5c5c;
   font-size: 1.3rem;
   margin-top: 13px;
   margin-bottom: 13px;
